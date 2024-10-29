@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "ds_viewer"
+dynamic = ["version"]
+dependencies = [
+    "fire",
+    "transformers",
+    "datasets"
+]
+requires-python = ">= 3.6"
+authors = [
+  {name = "Yannik Keller", email = "yannik@kelnet.de"},
+]
+description = "Visualize a dataset"
+readme = "README.md"
+license = {text = "MIT License"}
+keywords = ["HTML", "huggingface", "color", "text", "visualization", "datasets"]
+[tool.hatch.version]
+path = "ds_viewer/__init__.py"
+[project.scripts]
+dataset_html = "ds_viewer.__main__:do_show_entries"
